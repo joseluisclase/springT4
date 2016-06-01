@@ -4,63 +4,63 @@ import java.io.Serializable;
 
 /**
  *
- * @author JosÃ© Luis
- * @version 6.1
+ * @author Jose Luis
+ * @version 1.0
  */
-public class ClientePruebapractica7 implements Serializable{
-    public static final long serialVersionUID = 1L;
-    private String nif;
-    private String nombre;
-    private long telefono;
-    private String direccion;
-    private float deuda;
+public class Prueba implements Serializable{
+    public static final long serialUID = 1L;
+    private String dni;
+    private String nombre2;
+    private long telefono2;
+    private String direccion2;
+    private float deuda2;
     
-    public ClientePruebapractica7(String nif, String nombre, long telefono, String direccion, float deuda){
-        this.nif=nif;
-        this.nombre=nombre;
-        this.telefono=telefono;
-        this.direccion=direccion;
-        this.deuda=deuda;
+    public Prueba(String nif, String nombre, long telefono, String direccion, float deuda){
+        this.dni=nif;
+        this.nombre2=nombre;
+        this.telefono2=telefono;
+        this.direccion2=direccion;
+        this.deuda2=deuda;
     }
 
     public float getDeuda() {
-        return deuda;
+        return deuda2;
     }
 
     public void setDeuda(float deuda) {
-        this.deuda = deuda;
+        this.deuda2 = deuda;
     }
 
     public String getDireccion() {
-        return direccion;
+        return direccion2;
     }
 
     public void setDireccion(String direccion) {
-        this.direccion = direccion;
+        this.direccion2 = direccion;
     }
 
     public String getNif() {
-        return nif;
+        return dni;
     }
 
     public void setNif(String nif) {
-        this.nif = nif;
+        this.dni = nif;
     }
 
     public String getNombre() {
-        return nombre;
+        return nombre2;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombre2 = nombre;
     }
 
     public long getTelefono() {
-        return telefono;
+        return telefono2;
     }
 
     public void setTelefono(long telefono) {
-        this.telefono = telefono;
+        this.telefono2 = telefono;
     }
     @Override
     /**

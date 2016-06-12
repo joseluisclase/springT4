@@ -95,3 +95,4 @@ public class Prueba implements Serializable{
     public String toString(){
         return "Nombre: "+getNombre()+", NIF: "+getNif()+", DirecciÃ³n: "+getDireccion()+", TelÃ©fono: "+getTelefono()+", Deuda: "+getDeuda();
     }
+}

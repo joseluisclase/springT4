@@ -15,6 +15,15 @@ public class Prueba implements Serializable{
     private String direccion2;
     private float deuda2;
     
+     /**
+     * Crea un objeto prueba con los datos pasados como parámetro
+     *
+     * @param nif
+     * @param nombre
+     * @param direccion
+     * @param deuda
+     * @param telefono
+     */
     public Prueba(String nif, String nombre, long telefono, String direccion, float deuda){
         this.dni=nif;
         this.nombre2=nombre;
@@ -22,7 +31,12 @@ public class Prueba implements Serializable{
         this.direccion2=direccion;
         this.deuda2=deuda;
     }
-
+    
+    /**
+     *Metodo que devuelve la deuda
+     * @return deuda2
+     */
+     
     public float getDeuda() {
         return deuda2;
     }
@@ -30,7 +44,10 @@ public class Prueba implements Serializable{
     public void setDeuda(float deuda) {
         this.deuda2 = deuda;
     }
-
+    /**
+     *Metodo que devuelve la direccion
+     * @return direccion2
+     */
     public String getDireccion() {
         return direccion2;
     }
@@ -38,7 +55,10 @@ public class Prueba implements Serializable{
     public void setDireccion(String direccion) {
         this.direccion2 = direccion;
     }
-
+    /**
+     *Metodo que devuelve dni
+     * @return dni
+     */
     public String getNif() {
         return dni;
     }
@@ -46,7 +66,10 @@ public class Prueba implements Serializable{
     public void setNif(String nif) {
         this.dni = nif;
     }
-
+    /**
+     *Metodo que devuelve el nombre
+     * @return nombre2
+     */
     public String getNombre() {
         return nombre2;
     }
@@ -54,7 +77,10 @@ public class Prueba implements Serializable{
     public void setNombre(String nombre) {
         this.nombre2 = nombre;
     }
-
+    /**
+     *Metodo que devuelve el telefono
+     * @return telefono2
+     */
     public long getTelefono() {
         return telefono2;
     }
@@ -64,13 +90,8 @@ public class Prueba implements Serializable{
     }
     @Override
     /**
-     * MÃ©todo sobreescrito para obtener todos los datos del cliente por pantalla
+     * Metodo sobreescrito para obtener todos los datos del cliente por pantalla
      */
     public String toString(){
         return "Nombre: "+getNombre()+", NIF: "+getNif()+", DirecciÃ³n: "+getDireccion()+", TelÃ©fono: "+getTelefono()+", Deuda: "+getDeuda();
     }
-    
-    
-   
-
-}

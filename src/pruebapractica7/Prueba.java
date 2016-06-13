@@ -12,64 +12,64 @@ import java.io.Serializable;
  * @author alumno
  */
 public class Prueba implements Serializable{
-    private String NIF,Nombre, Telefono, Direccion;
-    private double Deuda;
+    private String DNI,Nombre2, Telefono2, Direccion2;
+    private double Deuda2;
     
     public Prueba(){
     };
     
-    public Prueba(String NIF, String Nombre, String Telefono, String Direccion, double Deuda){
-    this.NIF=NIF;
-    this.Nombre=Nombre;
-    this.Telefono=Telefono;
-    this.Direccion=Direccion;
-    this.Deuda=Deuda;
+    public Prueba(String DNI, String Nombre2, String Telefono2, String Direccion2, double Deuda2){
+    this.DNI=DNI;
+    this.Nombre2=Nombre2;
+    this.Telefono2=Telefono2;
+    this.Direccion2=Direccion2;
+    this.Deuda2=Deuda2;
     }
 
     public String getNIF() {
-        return NIF;
+        return DNI;
     }
 
     public String getNombre() {
-        return Nombre;
+        return Nombre2;
     }
 
     public String getTelefono() {
-        return Telefono;
+        return Telefono2;
     }
 
     public String getDireccion() {
-        return Direccion;
+        return Direccion2;
     }
 
     public void setNIF(String NIF) {
-        this.NIF = NIF;
+        this.DNI = NIF;
     }
 
     public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+        this.Nombre2 = Nombre;
     }
 
     public void setTelefono(String Telefono) {
-        this.Telefono = Telefono;
+        this.Telefono2 = Telefono;
     }
 
     public void setDireccion(String Direccion) {
-        this.Direccion = Direccion;
+        this.Direccion2 = Direccion;
     }
 
     public double getDeuda() {
-        return Deuda;
+        return Deuda2;
     }
 
     public void setDeuda(double Deuda) {
-        this.Deuda = Deuda;
+        this.Deuda2 = Deuda;
     }
     
     @Override
     public String toString(){
     String cadena;
-    cadena="Nif: "+NIF+" Nombre: "+Nombre+" Telefono: "+Telefono+" Direccion: "+Direccion+" Deuda= "+Deuda;
+    cadena="Nif: "+DNI+" Nombre: "+Nombre2+" Telefono: "+Telefono2+" Direccion: "+Direccion2+" Deuda= "+Deuda2;
     return cadena;
     }
 }

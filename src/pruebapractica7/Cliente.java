@@ -26,50 +26,79 @@ public class Cliente implements Serializable{
     this.Deuda2=Deuda2;
     }
 
-    public String getNIF() {
+    /**
+     * @return the DNI
+     */
+    public String getDNI() {
         return DNI;
     }
 
-    public String getNombre() {
+    /**
+     * @param DNI the DNI to set
+     */
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
+    }
+
+    /**
+     * @return the Nombre2
+     */
+    public String getNombre2() {
         return Nombre2;
     }
 
-    public String getTelefono() {
+    /**
+     * @param Nombre2 the Nombre2 to set
+     */
+    public void setNombre2(String Nombre2) {
+        this.Nombre2 = Nombre2;
+    }
+
+    /**
+     * @return the Telefono2
+     */
+    public String getTelefono2() {
         return Telefono2;
     }
 
-    public String getDireccion() {
+    /**
+     * @param Telefono2 the Telefono2 to set
+     */
+    public void setTelefono2(String Telefono2) {
+        this.Telefono2 = Telefono2;
+    }
+
+    /**
+     * @return the Direccion2
+     */
+    public String getDireccion2() {
         return Direccion2;
     }
 
-    public void setNIF(String NIF) {
-        this.DNI = NIF;
+    /**
+     * @param Direccion2 the Direccion2 to set
+     */
+    public void setDireccion2(String Direccion2) {
+        this.Direccion2 = Direccion2;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre2 = Nombre;
-    }
-
-    public void setTelefono(String Telefono) {
-        this.Telefono2 = Telefono;
-    }
-
-    public void setDireccion(String Direccion) {
-        this.Direccion2 = Direccion;
-    }
-
-    public double getDeuda() {
+    /**
+     * @return the Deuda2
+     */
+    public double getDeuda2() {
         return Deuda2;
     }
 
-    public void setDeuda(double Deuda) {
-        this.Deuda2 = Deuda;
+    /**
+     * @param Deuda2 the Deuda2 to set
+     */
+    public void setDeuda2(double Deuda2) {
+        this.Deuda2 = Deuda2;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "DNI=" + DNI + ", Nombre2=" + Nombre2 + ", Telefono2=" + Telefono2 + ", Direccion2=" + Direccion2 + ", Deuda2=" + Deuda2 + '}';
     }
     
-    @Override
-    public String toString(){
-    String cadena;
-    cadena="Nif: "+DNI+" Nombre: "+Nombre2+" Telefono: "+Telefono2+" Direccion: "+Direccion2+" Deuda= "+Deuda2;
-    return cadena;
-    }
 }

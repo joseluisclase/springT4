@@ -49,22 +49,22 @@ public class superclass {
         opcion= sc.nextInt();
         switch(opcion){
             case 1: System.out.println("Ha escogido introducir nuevo cliente");
-                    IntroDatos(f,cl,ac);
+                    IntroducirDatos(f,cl,ac);
                     
         
             break;
             case 2: System.out.println("Ha escogido listar los datos actuales");
-                    verDatos(f);
+                    VerDatosFichero(f);
             break;
             case 3: System.out.println("Ha escogido buscar un cliente");
-                    buscarDato(f,ac);
+                    buscarDatoEnArray(f,ac);
             
             break;
             case 4: System.out.println("Ha escogido borrar un cliente");
-                    borrarUno(f,ac);
+                    borrarUnocliente(f,ac);
             break;
             case 5: System.out.println("Ha escogido borrar todos los clientes");
-                    borrarTodos(f);
+                    borrarTodosClientes(f);
             break;
             case 6: salir= true;
             break;
@@ -78,7 +78,7 @@ public class superclass {
         }while(!salir);
     }
     
-    public static void IntroDatos(File f, Prueba cl, ArrayList ac){
+    public static void IntroducirDatos(File f, Prueba cl, ArrayList ac){
         String nif, nom, tel, dir;
         double deb=0;
         int nclientes;
@@ -97,7 +97,7 @@ public class superclass {
             do{
                 System.out.println("Introduzca Nif del cliente");
                 nif = sc.nextLine();
-                nifv= NifValido(nif);
+                nifv= ComprobarNifValido(nif);
                 if(nifv){
                 //setNIF(nif);
                 }else System.err.println("Ha introducido un NIF incorrecto, intentelo de nuevo");
@@ -105,7 +105,7 @@ public class superclass {
             do{
                 System.out.println("Introduzca telefono del cliente");
                 tel = sc.nextLine();
-                telv = TelValido(tel);
+                telv = ComprobarTelValido(tel);
                 if(telv){
                 //setTelefono(tel);
                 }else System.err.println("Ha introducido un telefono incorrecto, intentelo de nuevo");
@@ -130,10 +130,10 @@ public class superclass {
         }
        
         
-        escribirArchivo(f,ac,nclientes);
+        escribirArchivoEnFichero(f,ac,nclientes);
     }
     
-    private static void verDatos(File f){
+    private static void VerDatosFichero(File f){
         try
         {
             // Se crea un ObjectInputStream
@@ -161,7 +161,7 @@ public class superclass {
             e2.printStackTrace();
         }
     }
-    private static void abrir(File f, ArrayList ac){
+    private static void abrirfichero(File f, ArrayList ac){
         try
         {
             // Se crea un ObjectInputStream
@@ -190,7 +190,7 @@ public class superclass {
         }
     }
     
-    private static boolean NifValido(String nif){
+    private static boolean ComprobarNifValido(String nif){
         int nnif;
         char letra;
         letra = nif.charAt(8);
@@ -201,7 +201,7 @@ public class superclass {
         }
         return false;
     }
-    private static boolean TelValido(String tel) {
+    private static boolean ComprobarTelValido(String tel) {
         int telef;
         telef = Integer.parseInt(tel);
         if((telef>600000000&&telef<700000000)||(telef>900000000&&telef<1000000000)){
@@ -215,7 +215,7 @@ public class superclass {
             System.out.println("Cliente guardado con exito");
             
     }
-    private static void escribirArchivo(File f, ArrayList ac, int i){
+    private static void escribirArchivoEnFichero(File f, ArrayList ac, int i){
         try{
             if(!f.exists()) f=new File("clientes.dat");
             FileOutputStream fos = new FileOutputStream(f);
@@ -231,7 +231,7 @@ public class superclass {
         }
     }
     
-    private static void buscarDato(File f, ArrayList ac){
+    private static void buscarDatoEnArray(File f, ArrayList ac){
         Scanner sc = new Scanner(System.in); 
         try{
             String res;
@@ -240,7 +240,7 @@ public class superclass {
                 repetir=false;
                 System.out.println("Introduzca el nif del cliente que desea buscar");
                 String ni=sc.nextLine();
-                abrir(f,ac);
+                abrirfichero(f,ac);
                 
                 encontrado=false;
                 for(int i=0;i<ac.size();i++){
@@ -267,7 +267,7 @@ public class superclass {
             System.out.println("Error: "+ex.getMessage());
         }
     }
-    private static void borrarUno(File f, ArrayList ac){
+    private static void borrarUnocliente(File f, ArrayList ac){
     Scanner sc = new Scanner(System.in); 
         try{
             String res;
@@ -276,7 +276,7 @@ public class superclass {
                 repetir=false;
                 System.out.println("Introduzca el nif del cliente que desea borrar");
                 String ni=sc.nextLine();
-                abrir(f,ac);
+                abrirfichero(f,ac);
                 
                 encontrado=false;
                 for(int i=0;i<ac.size();i++){
@@ -285,7 +285,7 @@ public class superclass {
                         encontrado=true;
                         System.out.println("Registro nº"+i+" - "+clt.toString());
                         ac.remove(i);
-                        escribirArchivo(f,ac,ac.size());
+                        escribirArchivoEnFichero(f,ac,ac.size());
                         System.out.println("Registro borrado con exito.");
                     }
                     
@@ -305,7 +305,7 @@ public class superclass {
         } catch(Exception ex){
             System.out.println("Error: "+ex.getMessage());
         }}
-    private static void borrarTodos(File f){
+    private static void borrarTodosClientes(File f){
         f.delete();
         
     }
